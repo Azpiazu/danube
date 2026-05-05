@@ -75,6 +75,7 @@ export const translations = {
       queenBed: "queen bed",
       sofaBedDesc: "sofa bed",
       danubeViews: "Danube, city skyline & Chain Bridge views",
+      photos: "photos",
     },
     // Budapest Map
     map: {
@@ -301,6 +302,7 @@ export const translations = {
       queenBed: "cama queen",
       sofaBedDesc: "sofá cama",
       danubeViews: "Vistas al Danubio, horizonte urbano y Puente de las Cadenas",
+      photos: "fotos",
     },
     // Budapest Map
     map: {
@@ -527,6 +529,7 @@ export const translations = {
       queenBed: "dupla ágy",
       sofaBedDesc: "kanapéágy",
       danubeViews: "Duna, városi panoráma és Lánchíd kilátás",
+      photos: "fotók",
     },
     // Budapest Map
     map: {

@@ -46,7 +46,7 @@ export function BudapestMap() {
         <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-accent/20 bg-card">
           <div className="relative w-full" style={{ paddingBottom: '64.29%' }}>
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-yCXo1FIfmbKEWpcNt3Gfr9DB6pFpmB.png"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-TlNIRjl4bxRz4hQhJCv77kurKKYs0j.png"
               alt="Illustrated map of Budapest showing walking distances from the apartment to major landmarks including Chain Bridge, Parliament, Buda Castle, Fisherman's Bastion, and more"
               fill
               className="object-contain"

@@ -22,19 +22,31 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center pt-24">
-        {/* Logo - Above everything, large and integrated */}
-        <div className="mb-8 flex items-center justify-center">
-          <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-yA3b7lgcaB1DZcxlOaG9Swb0P9BHMJ.png"
-            alt="Danube Waterfront at Chain Bridge"
-            width={320}
-            height={160}
-            className="h-24 sm:h-32 md:h-40 w-auto opacity-90 drop-shadow-lg"
-          />
+        {/* Logo - Large, integrated with rounded corners and transparency */}
+        <div className="mb-10 flex items-center justify-center">
+          <div className="rounded-3xl overflow-hidden bg-white/70 backdrop-blur-sm p-6 sm:p-8">
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-yA3b7lgcaB1DZcxlOaG9Swb0P9BHMJ.png"
+              alt="Danube Waterfront at Chain Bridge"
+              width={400}
+              height={200}
+              className="h-28 sm:h-36 md:h-44 lg:h-52 w-auto drop-shadow-md"
+            />
+          </div>
         </div>
 
-        {/* Airbnb Badges */}
-        <div className="mb-6 flex flex-wrap items-center justify-center gap-3">
+        {/* Headline */}
+        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-primary text-balance leading-tight drop-shadow-sm">
+          {t.hero.headline}
+        </h1>
+
+        {/* Subheadline */}
+        <p className="mt-8 text-lg sm:text-xl text-foreground/90 max-w-3xl mx-auto text-pretty leading-relaxed">
+          {t.hero.subheadline}
+        </p>
+
+        {/* Airbnb Badges - After text */}
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           {/* Guest Favorite Badge */}
           <div className="inline-flex items-center gap-2 rounded-full bg-background/90 backdrop-blur-sm px-4 py-2 shadow-sm border border-border">
             <svg viewBox="0 0 24 24" className="h-5 w-5 text-[#FF385C]" fill="currentColor">
@@ -52,18 +64,8 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Headline */}
-        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-primary text-balance leading-tight drop-shadow-sm">
-          {t.hero.headline}
-        </h1>
-
-        {/* Subheadline */}
-        <p className="mt-8 text-lg sm:text-xl text-foreground/90 max-w-3xl mx-auto text-pretty leading-relaxed">
-          {t.hero.subheadline}
-        </p>
-
         {/* Scroll indicator */}
-        <div className="mt-16 sm:mt-24 animate-bounce">
+        <div className="mt-12 sm:mt-20 animate-bounce">
           <div className="mx-auto h-12 w-6 rounded-full border-2 border-foreground/30 bg-background/50 backdrop-blur-sm flex items-start justify-center pt-2">
             <div className="h-2 w-1 rounded-full bg-foreground/50" />
           </div>
