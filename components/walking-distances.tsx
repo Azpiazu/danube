@@ -9,7 +9,7 @@ export function WalkingDistances() {
   const places = [
     {
       name: t.walking.chainBridge,
-      time: `4–6 ${t.walking.min}`,
+      time: `2–4 ${t.walking.min}`,
       description: t.walking.chainBridgeDesc,
     },
     {

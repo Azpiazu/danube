@@ -138,6 +138,7 @@ export const translations = {
       rooftopBars: "Rooftop Bars",
       thermalBaths: "Thermal Baths",
       nightlife: "Nightlife",
+      sameBuilding: "Same building",
     },
     // First Walk
     firstWalk: {
@@ -370,8 +371,9 @@ export const translations = {
       rooftopBars: "Terrazas",
       thermalBaths: "Baños termales",
       nightlife: "Vida nocturna",
+      sameBuilding: "Mismo edificio",
     },
-  // First Walk
+    // First Walk
   firstWalk: {
   sectionLabel: "Primeros pasos",
   title: "Tu primer paseo",
@@ -602,6 +604,7 @@ export const translations = {
       rooftopBars: "Tetőbárok",
       thermalBaths: "Gyógyfürdők",
       nightlife: "Éjszakai élet",
+      sameBuilding: "Ugyanabban az épületben",
     },
     // First Walk
     firstWalk: {

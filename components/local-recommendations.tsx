@@ -8,9 +8,10 @@ const recommendations = [
   {
     name: "Zërgë Coffeeshop",
     category: "coffee",
-    walk: "3–5",
-    description: "Cozy specialty coffee spot with excellent espresso and homemade pastries",
+    walk: "0",
+    description: "Same building! Cozy specialty coffee spot with excellent espresso and homemade pastries",
     price: "$",
+    sameBuilding: true,
   },
   {
     name: "Leo Bistro",
@@ -123,7 +124,7 @@ export function LocalRecommendations() {
               </div>
               <div className="flex items-center gap-2 mb-3">
                 <p className="text-sm text-accent font-medium">
-                  {place.walk} {t.walking.min}
+                  {place.sameBuilding ? (t.local.sameBuilding || "Same building") : `${place.walk} ${t.walking.min}`}
                 </p>
                 <span className="text-muted-foreground">·</span>
                 <p className="text-sm text-muted-foreground font-medium">
