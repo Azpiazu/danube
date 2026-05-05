@@ -21,8 +21,8 @@ export const translations = {
     // Hero
     hero: {
       badge: "Guest Favorite · Superhost",
-      headline: "A boutique Danube-view apartment at Chain Bridge",
-      subheadline: "A stylish 2-bedroom apartment on the Buda riverfront, with panoramic views of the Danube, Chain Bridge, Parliament and St. Stephen's Basilica — designed for couples, families and small groups who want to experience Budapest from one of its most beautiful locations.",
+      headline: "Stay Above Budapest's Most Iconic View",
+      subheadline: "Boutique 2-bedroom apartment on the Buda riverfront, overlooking the Széchenyi Chain Bridge, the Hungarian Parliament Building, and the Danube. Wake up to the city's most breathtaking panorama.",
       bookAirbnb: "Book on Airbnb",
       bookBooking: "Book on Booking.com",
     },
@@ -250,8 +250,8 @@ export const translations = {
     // Hero
     hero: {
       badge: "Favorito de los huéspedes · Superanfitrión",
-      headline: "Un apartamento boutique con vistas al Danubio en el Puente de las Cadenas",
-      subheadline: "Un elegante apartamento de 2 dormitorios en la ribera de Buda, con vistas panorámicas al Danubio, el Puente de las Cadenas, el Parlamento y la Basílica de San Esteban — diseñado para parejas, familias y pequeños grupos que desean experimentar Budapest desde una de sus ubicaciones más hermosas.",
+      headline: "Alójate Sobre la Vista Más Icónica de Budapest",
+      subheadline: "Apartamento boutique de 2 dormitorios en la ribera de Buda, con vistas al Puente de las Cadenas Széchenyi, el Parlamento Húngaro y el Danubio. Despierta con el panorama más impresionante de la ciudad.",
       bookAirbnb: "Reservar en Airbnb",
       bookBooking: "Reservar en Booking.com",
     },
@@ -479,8 +479,8 @@ export const translations = {
     // Hero
     hero: {
       badge: "Vendégek kedvence · Szuperházigazda",
-      headline: "Boutique Duna-panorámás lakás a Lánchídnál",
-      subheadline: "Stílusos 2 hálószobás lakás a budai Duna-parton, panorámás kilátással a Dunára, a Lánchídra, a Parlamentre és a Szent István Bazilikára — pároknak, családoknak és kis csoportoknak, akik Budapest egyik legszebb helyéről szeretnék felfedezni a várost.",
+  headline: "Szállj meg Budapest legikonikusabb kilátása felett",
+  subheadline: "Boutique 2 hálószobás lakás a budai Duna-parton, kilátással a Széchenyi Lánchídra, a Magyar Országházra és a Dunára. Ébredj a város leglélegzetelállítóbb panorámájára.",
       bookAirbnb: "Foglalás Airbnb-n",
       bookBooking: "Foglalás Booking.com-on",
     },
