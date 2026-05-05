@@ -50,9 +50,14 @@ export function Apartment() {
   const galleryImages = [
     // Page 1 - Views & Living spaces
     { 
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/shutterstock_2691187215-tT8QAnlUH5QeIsvOhMe7oSyiupQCyE.jpg",
-      alt: "Stunning view of Chain Bridge and Buda Castle illuminated at sunset from the apartment",
-      label: t.apartment.danubeViews
+      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-qX9n4yJ9zLGSCYUg3XtFGnLFLvnAPU.png",
+      alt: "View of Chain Bridge from the apartment with a boat passing on the Danube",
+      label: t.apartment.chainBridgeView
+    },
+    { 
+      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-7nKxaK8q5bxs2BtUyVKfKyealSUhFr.png",
+      alt: "View of Hungarian Parliament building from the apartment across the Danube",
+      label: t.apartment.parliamentView
     },
     { 
       src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-xF8XtGVjlrhdlf9DE4gsM7mLpQd76S.png",
@@ -75,10 +80,16 @@ export function Apartment() {
       label: t.apartment.kitchen
     },
     { 
+      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-XcFVRP47MmD4FIohGL07pyWVrmVgcC.png",
+      alt: "Modern white bathroom with glass shower enclosure and vanity",
+      label: t.apartment.bathroom
+    },
+    { 
       src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-yePUtYaJdadtpedoAupHwhUTtVwhjz.png",
       alt: "Charming hallway with patterned tile floor and white doors",
       label: t.apartment.hallway
     },
+    // Page 2 - More details
     { 
       src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-WdPgx6LfbKT3Vfw78mgIX6b1e7LSww.png",
       alt: "Building entrance with white door and number 4",
@@ -89,7 +100,6 @@ export function Apartment() {
       alt: "Minimalist workspace with white desk, mirror and chair",
       label: t.apartment.workspace
     },
-    // Page 2 - More details
     { 
       src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-QaefDjLtymcD9n6SNu9H6zhR0DMV2c.png",
       alt: "Bedroom detail with cozy lamp and plant",

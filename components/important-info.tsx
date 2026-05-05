@@ -77,7 +77,7 @@ export function ImportantInfo() {
               <div>
                 <h3 className="font-medium text-foreground mb-2">{t.importantInfo.goodToKnow}</h3>
                 <ul className="text-muted-foreground space-y-1">
-                  <li>{t.importantInfo.thirdFloor}</li>
+                  <li>{t.importantInfo.firstFloor}</li>
                   <li>{t.importantInfo.streetParking}</li>
                   <li>{t.importantInfo.historicBuilding}</li>
                 </ul>
