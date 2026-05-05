@@ -30,7 +30,7 @@ export function Contact() {
               </a>
             </Button>
             <Button size="lg" variant="outline" className="px-10 w-full sm:w-auto" asChild>
-              <a href="https://booking.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.booking.com/hotel/hu/brand-new-panoramic-flat-at-chain-bridge-with-gorgeous-view.en-gb.html?label=gen173nr-10CAEoggI46AdIM1gEaGeIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AqXe5c8GwAIB0gIkYjczNmM2NjItMzc5Yi00OThjLTgyNDgtMzg4YTBkOWFhZjU52AIB4AIB&aid=304142&ucfs=1&arphpl=1&checkin=2026-05-19&checkout=2026-05-22" target="_blank" rel="noopener noreferrer">
                 {t.contact.bookBooking}
               </a>
             </Button>

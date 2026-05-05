@@ -119,7 +119,7 @@ export function Header() {
 
             {/* Booking Logos */}
             <a 
-              href="https://booking.com" 
+              href="https://www.booking.com/hotel/hu/brand-new-panoramic-flat-at-chain-bridge-with-gorgeous-view.en-gb.html?label=gen173nr-10CAEoggI46AdIM1gEaGeIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AqXe5c8GwAIB0gIkYjczNmM2NjItMzc5Yi00OThjLTgyNDgtMzg4YTBkOWFhZjU52AIB4AIB&aid=304142&ucfs=1&arphpl=1&checkin=2026-05-19&checkout=2026-05-22" 
               target="_blank" 
               rel="noopener noreferrer"
               className={`flex items-center justify-center p-2 rounded-lg transition-all hover:scale-105 ${
@@ -216,7 +216,7 @@ export function Header() {
             ))}
             <div className="pt-4 flex flex-col gap-3">
               <Button variant="outline" className="w-full" asChild>
-                <a href="https://booking.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.booking.com/hotel/hu/brand-new-panoramic-flat-at-chain-bridge-with-gorgeous-view.en-gb.html?label=gen173nr-10CAEoggI46AdIM1gEaGeIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AqXe5c8GwAIB0gIkYjczNmM2NjItMzc5Yi00OThjLTgyNDgtMzg4YTBkOWFhZjU52AIB4AIB&aid=304142&ucfs=1&arphpl=1&checkin=2026-05-19&checkout=2026-05-22" target="_blank" rel="noopener noreferrer">
                   {t.hero.bookBooking}
                 </a>
               </Button>
