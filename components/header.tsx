@@ -37,13 +37,13 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const getFlagEmoji = (code: Language) => {
-    switch (code) {
-      case "en": return "🇬🇧"
-      case "es": return "🇪🇸"
-      case "hu": return "🇭🇺"
-      default: return "🌐"
+  const getFlagImage = (code: Language) => {
+    const flags: Record<Language, { src: string; alt: string }> = {
+      en: { src: "https://flagcdn.com/w40/gb.png", alt: "English" },
+      es: { src: "https://flagcdn.com/w40/es.png", alt: "Español" },
+      hu: { src: "https://flagcdn.com/w40/hu.png", alt: "Magyar" },
     }
+    return flags[code] || flags.en
   }
 
   return (
@@ -99,7 +99,13 @@ export function Header() {
                     isScrolled ? "" : "text-white hover:bg-white/20"
                   }`}
                 >
-                  <span className="text-lg">{getFlagEmoji(language)}</span>
+                  <Image 
+                    src={getFlagImage(language).src} 
+                    alt={getFlagImage(language).alt}
+                    width={24}
+                    height={18}
+                    className="rounded-sm shadow-sm"
+                  />
                   <Globe className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
@@ -110,7 +116,13 @@ export function Header() {
                     onClick={() => setLanguage(lang.code)}
                     className={language === lang.code ? "bg-accent/10" : ""}
                   >
-                    <span className="text-lg mr-2">{lang.flag}</span>
+                    <Image 
+                      src={getFlagImage(lang.code).src} 
+                      alt={getFlagImage(lang.code).alt}
+                      width={24}
+                      height={18}
+                      className="rounded-sm shadow-sm mr-2"
+                    />
                     <span>{lang.label}</span>
                   </DropdownMenuItem>
                 ))}
@@ -166,7 +178,13 @@ export function Header() {
                     isScrolled ? "" : "text-white hover:bg-white/20"
                   }`}
                 >
-                  <span className="text-lg">{getFlagEmoji(language)}</span>
+                  <Image 
+                    src={getFlagImage(language).src} 
+                    alt={getFlagImage(language).alt}
+                    width={24}
+                    height={18}
+                    className="rounded-sm shadow-sm"
+                  />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
@@ -176,7 +194,13 @@ export function Header() {
                     onClick={() => setLanguage(lang.code)}
                     className={language === lang.code ? "bg-accent/10" : ""}
                   >
-                    <span className="text-lg mr-2">{lang.flag}</span>
+                    <Image 
+                      src={getFlagImage(lang.code).src} 
+                      alt={getFlagImage(lang.code).alt}
+                      width={24}
+                      height={18}
+                      className="rounded-sm shadow-sm mr-2"
+                    />
                     <span>{lang.label}</span>
                   </DropdownMenuItem>
                 ))}
