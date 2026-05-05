@@ -8,38 +8,45 @@ const recommendations = [
   {
     name: "Zërgë Coffeeshop",
     category: "coffee",
-    walk: "3–5",
-    descriptionKey: "coffee",
+    walk: "0",
+    description: "Same building! Cozy specialty coffee spot with excellent espresso and homemade pastries",
+    price: "$",
+    sameBuilding: true,
   },
   {
     name: "Leo Bistro",
     category: "restaurant",
     walk: "3–5",
-    descriptionKey: "restaurant",
+    description: "Modern Hungarian cuisine with stunning Danube views and elegant setting",
+    price: "$$$",
   },
   {
     name: "Leo Rooftop",
     category: "rooftop",
     walk: "3–5",
-    descriptionKey: "rooftop",
+    description: "Sophisticated rooftop bar with panoramic city views and craft cocktails",
+    price: "$$$",
   },
   {
     name: "FELIX Kitchen & Bar",
     category: "restaurant",
     walk: "12–15",
-    descriptionKey: "restaurant",
+    description: "Trendy bistro serving creative international dishes in a lively atmosphere",
+    price: "$$",
   },
   {
     name: "Déryné",
     category: "restaurant",
     walk: "12–15",
-    descriptionKey: "restaurant",
+    description: "Classic Hungarian restaurant in a charming historic setting with garden seating",
+    price: "$$",
   },
   {
     name: "Espresso Embassy",
     category: "coffee",
     walk: "18–22",
-    descriptionKey: "coffee",
+    description: "Award-winning specialty coffee roasters with minimalist design and expert baristas",
+    price: "$",
   },
 ]
 
@@ -115,11 +122,17 @@ export function LocalRecommendations() {
                 </div>
                 <Sparkles className="h-5 w-5 text-accent/50" />
               </div>
-              <p className="text-sm text-accent font-medium mb-3">
-                {place.walk} {t.walking.min}
-              </p>
+              <div className="flex items-center gap-2 mb-3">
+                <p className="text-sm text-accent font-medium">
+                  {place.sameBuilding ? (t.local.sameBuilding || "Same building") : `${place.walk} ${t.walking.min}`}
+                </p>
+                <span className="text-muted-foreground">·</span>
+                <p className="text-sm text-muted-foreground font-medium">
+                  {place.price}
+                </p>
+              </div>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                {t.local.description}
+                {place.description}
               </p>
             </div>
           ))}

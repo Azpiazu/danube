@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useEffect, useCallback } from "react"
 import { 
   Home, 
   Users, 
@@ -11,13 +12,56 @@ import {
   UtensilsCrossed,
   Tv,
   Mountain,
-  Sofa
+  Sofa,
+  ChevronLeft,
+  ChevronRight,
+  X
 } from "lucide-react"
 import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
 
 export function Apartment() {
   const { t } = useLanguage()
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [galleryPage, setGalleryPage] = useState(0)
+  const imagesPerPage = 8
+
+  const galleryLength = 11 // Total number of gallery images
+
+  // Keyboard navigation for lightbox
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (!lightboxOpen) return
+    
+    switch (e.key) {
+      case 'ArrowLeft':
+        setCurrentImageIndex((prev) => (prev === 0 ? galleryLength - 1 : prev - 1))
+        break
+      case 'ArrowRight':
+        setCurrentImageIndex((prev) => (prev === galleryLength - 1 ? 0 : prev + 1))
+        break
+      case 'Escape':
+        setLightboxOpen(false)
+        break
+    }
+  }, [lightboxOpen])
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [handleKeyDown])
+
+  // Prevent body scroll when lightbox is open
+  useEffect(() => {
+    if (lightboxOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [lightboxOpen])
 
   const features = [
     { icon: Home, label: t.apartment.sectionLabel },
@@ -40,6 +84,17 @@ export function Apartment() {
   ]
 
   const galleryImages = [
+    // Page 1 - Views & Living spaces
+    { 
+      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-qX9n4yJ9zLGSCYUg3XtFGnLFLvnAPU.png",
+      alt: "View of Chain Bridge from the apartment with a boat passing on the Danube",
+      label: t.apartment.chainBridgeView
+    },
+    { 
+      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-7nKxaK8q5bxs2BtUyVKfKyealSUhFr.png",
+      alt: "View of Hungarian Parliament building from the apartment across the Danube",
+      label: t.apartment.parliamentView
+    },
     { 
       src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-xF8XtGVjlrhdlf9DE4gsM7mLpQd76S.png",
       alt: "Bright living room with beige sofa, polka dot pillows, TV, and tall windows overlooking the city",
@@ -61,10 +116,16 @@ export function Apartment() {
       label: t.apartment.kitchen
     },
     { 
+      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-XcFVRP47MmD4FIohGL07pyWVrmVgcC.png",
+      alt: "Modern white bathroom with glass shower enclosure and vanity",
+      label: t.apartment.bathroom
+    },
+    { 
       src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-yePUtYaJdadtpedoAupHwhUTtVwhjz.png",
       alt: "Charming hallway with patterned tile floor and white doors",
       label: t.apartment.hallway
     },
+    // Page 2 - More details
     { 
       src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-WdPgx6LfbKT3Vfw78mgIX6b1e7LSww.png",
       alt: "Building entrance with white door and number 4",
@@ -81,6 +142,9 @@ export function Apartment() {
       label: t.apartment.bedroom
     },
   ]
+  
+  const totalPages = Math.ceil(galleryImages.length / imagesPerPage)
+  const currentImages = galleryImages.slice(galleryPage * imagesPerPage, (galleryPage + 1) * imagesPerPage)
 
   return (
     <section id="apartment" className="py-20 sm:py-28 bg-secondary">
@@ -134,45 +198,133 @@ export function Apartment() {
           ))}
         </div>
 
-        {/* Image Gallery - Clean Aligned Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {/* Row 1 - 4 images */}
-          {galleryImages.slice(0, 4).map((image, index) => (
-            <div 
-              key={index} 
-              className="relative aspect-[4/3] rounded-2xl overflow-hidden group"
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+        {/* Image Gallery - Clean Aligned Grid with Navigation */}
+        <div className="relative">
+          {/* Gallery Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {currentImages.map((image, index) => {
+              const globalIndex = galleryPage * imagesPerPage + index
+              return (
+                <button 
+                  key={globalIndex} 
+                  className="relative aspect-[4/3] rounded-2xl overflow-hidden group cursor-pointer"
+                  onClick={() => {
+                    setCurrentImageIndex(globalIndex)
+                    setLightboxOpen(true)
+                  }}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
+                    <p className="text-white text-sm font-medium">{image.label}</p>
+                  </div>
+                </button>
+              )
+            })}
+          </div>
+
+          {/* Gallery Navigation Arrows */}
+          {totalPages > 1 && (
+            <>
+              <button
+                onClick={() => setGalleryPage((prev) => (prev === 0 ? totalPages - 1 : prev - 1))}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-6 bg-background/90 backdrop-blur-sm rounded-full p-2 shadow-lg border border-border hover:bg-background transition-colors"
+              >
+                <ChevronLeft className="h-6 w-6 text-foreground" />
+              </button>
+              <button
+                onClick={() => setGalleryPage((prev) => (prev === totalPages - 1 ? 0 : prev + 1))}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-6 bg-background/90 backdrop-blur-sm rounded-full p-2 shadow-lg border border-border hover:bg-background transition-colors"
+              >
+                <ChevronRight className="h-6 w-6 text-foreground" />
+              </button>
+            </>
+          )}
+        </div>
+
+        {/* Gallery Navigation */}
+        <div className="flex justify-center items-center gap-4 mt-6">
+          {/* Page Dots */}
+          <div className="flex items-center gap-2">
+            {Array.from({ length: totalPages }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setGalleryPage(index)}
+                className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                  index === galleryPage ? "bg-accent" : "bg-muted-foreground/30"
+                }`}
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
-                <p className="text-white text-sm font-medium">{image.label}</p>
-              </div>
-            </div>
-          ))}
-          
-          {/* Row 2 - 4 images */}
-          {galleryImages.slice(4, 8).map((image, index) => (
-            <div 
-              key={index + 4} 
-              className="relative aspect-[4/3] rounded-2xl overflow-hidden group"
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
-                <p className="text-white text-sm font-medium">{image.label}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          {/* Image Counter */}
+          <span className="text-sm text-muted-foreground">
+            {galleryPage * imagesPerPage + 1}-{Math.min((galleryPage + 1) * imagesPerPage, galleryImages.length)} / {galleryImages.length} {t.apartment.photos || "photos"}
+          </span>
         </div>
       </div>
+
+      {/* Lightbox */}
+      {lightboxOpen && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
+          onClick={() => setLightboxOpen(false)}
+        >
+          {/* Close button */}
+          <button
+            onClick={() => setLightboxOpen(false)}
+            className="absolute top-4 right-4 text-white/80 hover:text-white z-50 p-2"
+          >
+            <X className="h-8 w-8" />
+          </button>
+
+          {/* Previous button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              setCurrentImageIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1))
+            }}
+            className="absolute left-4 text-white/80 hover:text-white z-50 p-2"
+          >
+            <ChevronLeft className="h-10 w-10" />
+          </button>
+
+          {/* Image */}
+          <div 
+            className="relative w-full max-w-5xl h-[80vh] mx-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={galleryImages[currentImageIndex].src}
+              alt={galleryImages[currentImageIndex].alt}
+              fill
+              className="object-contain"
+            />
+            <div className="absolute bottom-4 left-0 right-0 text-center">
+              <p className="text-white text-lg font-medium">
+                {galleryImages[currentImageIndex].label}
+              </p>
+              <p className="text-white/70 text-sm mt-1">
+                {currentImageIndex + 1} / {galleryImages.length}
+              </p>
+            </div>
+          </div>
+
+          {/* Next button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              setCurrentImageIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1))
+            }}
+            className="absolute right-4 text-white/80 hover:text-white z-50 p-2"
+          >
+            <ChevronRight className="h-10 w-10" />
+          </button>
+        </div>
+      )}
     </section>
   )
 }

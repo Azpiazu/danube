@@ -20,12 +20,12 @@ export function CheckIn() {
     {
       icon: MessageCircle,
       title: t.trust.communication,
-      description: t.trust.responseTime,
+      description: t.trust.greatResponseTime,
     },
     {
       icon: Lock,
       title: t.checkIn.luggageStorage,
-      description: t.checkIn.luggageStorageDesc,
+      description: t.checkIn.luggageStorageDescAvailability,
     },
   ]
 

@@ -1,6 +1,5 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
 
@@ -15,7 +14,7 @@ export function Hero() {
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/shutterstock_2691187215-tT8QAnlUH5QeIsvOhMe7oSyiupQCyE.jpg"
           alt="Panoramic view of Chain Bridge and Buda Castle illuminated at sunset"
           fill
-          className="object-cover"
+          className="object-cover animate-[scaleIn_1.5s_ease-out]"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/20" />
@@ -23,8 +22,31 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center pt-24">
-        {/* Airbnb Badges */}
-        <div className="mb-6 flex flex-wrap items-center justify-center gap-3">
+        {/* Logo - Large, integrated with rounded corners and transparency */}
+        <div className="mb-10 flex items-center justify-center animate-[fadeInDown_1s_ease-out]">
+          <div className="rounded-3xl overflow-hidden bg-white/70 backdrop-blur-sm p-6 sm:p-8">
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-yA3b7lgcaB1DZcxlOaG9Swb0P9BHMJ.png"
+              alt="Danube Waterfront at Chain Bridge"
+              width={400}
+              height={200}
+              className="h-28 sm:h-36 md:h-44 lg:h-52 w-auto drop-shadow-md"
+            />
+          </div>
+        </div>
+
+        {/* Headline */}
+        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-primary text-balance leading-tight drop-shadow-sm animate-[fadeInUp_1s_ease-out_0.3s_both]">
+          {t.hero.headline}
+        </h1>
+
+        {/* Subheadline */}
+        <p className="mt-8 text-lg sm:text-xl text-foreground/90 max-w-3xl mx-auto text-pretty leading-relaxed animate-[fadeInUp_1s_ease-out_0.5s_both]">
+          {t.hero.subheadline}
+        </p>
+
+        {/* Airbnb Badges - After text */}
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3 animate-[fadeInUp_1s_ease-out_0.7s_both]">
           {/* Guest Favorite Badge */}
           <div className="inline-flex items-center gap-2 rounded-full bg-background/90 backdrop-blur-sm px-4 py-2 shadow-sm border border-border">
             <svg viewBox="0 0 24 24" className="h-5 w-5 text-[#FF385C]" fill="currentColor">
@@ -42,32 +64,8 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Headline */}
-        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-primary text-balance leading-tight drop-shadow-sm">
-          {t.hero.headline}
-        </h1>
-
-        {/* Subheadline */}
-        <p className="mt-8 text-lg sm:text-xl text-foreground/90 max-w-3xl mx-auto text-pretty leading-relaxed">
-          {t.hero.subheadline}
-        </p>
-
-        {/* CTAs */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8" asChild>
-            <a href="https://airbnb.com" target="_blank" rel="noopener noreferrer">
-              {t.hero.bookAirbnb}
-            </a>
-          </Button>
-          <Button size="lg" variant="outline" className="px-8 bg-background/80 backdrop-blur-sm" asChild>
-            <a href="https://booking.com" target="_blank" rel="noopener noreferrer">
-              {t.hero.bookBooking}
-            </a>
-          </Button>
-        </div>
-
         {/* Scroll indicator */}
-        <div className="mt-16 sm:mt-24 animate-bounce">
+        <div className="mt-12 sm:mt-20 animate-bounce">
           <div className="mx-auto h-12 w-6 rounded-full border-2 border-foreground/30 bg-background/50 backdrop-blur-sm flex items-start justify-center pt-2">
             <div className="h-2 w-1 rounded-full bg-foreground/50" />
           </div>

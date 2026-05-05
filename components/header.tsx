@@ -37,13 +37,13 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const getFlagEmoji = (code: Language) => {
-    switch (code) {
-      case "en": return "🇬🇧"
-      case "es": return "🇪🇸"
-      case "hu": return "🇭🇺"
-      default: return "🌐"
+  const getFlagImage = (code: Language) => {
+    const flags: Record<Language, { src: string; alt: string }> = {
+      en: { src: "https://flagcdn.com/w40/gb.png", alt: "English" },
+      es: { src: "https://flagcdn.com/w40/es.png", alt: "Español" },
+      hu: { src: "https://flagcdn.com/w40/hu.png", alt: "Magyar" },
     }
+    return flags[code] || flags.en
   }
 
   return (
@@ -99,7 +99,12 @@ export function Header() {
                     isScrolled ? "" : "text-white hover:bg-white/20"
                   }`}
                 >
-                  <span className="text-lg">{getFlagEmoji(language)}</span>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img 
+                    src={getFlagImage(language).src} 
+                    alt={getFlagImage(language).alt}
+                    className="rounded-sm shadow-sm w-6 h-4"
+                  />
                   <Globe className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
@@ -110,7 +115,12 @@ export function Header() {
                     onClick={() => setLanguage(lang.code)}
                     className={language === lang.code ? "bg-accent/10" : ""}
                   >
-                    <span className="text-lg mr-2">{lang.flag}</span>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img 
+                      src={getFlagImage(lang.code).src} 
+                      alt={getFlagImage(lang.code).alt}
+                      className="rounded-sm shadow-sm mr-2 w-6 h-4"
+                    />
                     <span>{lang.label}</span>
                   </DropdownMenuItem>
                 ))}
@@ -119,7 +129,7 @@ export function Header() {
 
             {/* Booking Logos */}
             <a 
-              href="https://booking.com" 
+              href="https://www.booking.com/hotel/hu/brand-new-panoramic-flat-at-chain-bridge-with-gorgeous-view.en-gb.html?label=gen173nr-10CAEoggI46AdIM1gEaGeIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AqXe5c8GwAIB0gIkYjczNmM2NjItMzc5Yi00OThjLTgyNDgtMzg4YTBkOWFhZjU52AIB4AIB&aid=304142&ucfs=1&arphpl=1&checkin=2026-05-19&checkout=2026-05-22" 
               target="_blank" 
               rel="noopener noreferrer"
               className={`flex items-center justify-center p-2 rounded-lg transition-all hover:scale-105 ${
@@ -127,16 +137,15 @@ export function Header() {
               }`}
               aria-label="Book on Booking.com"
             >
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="https://upload.wikimedia.org/wikipedia/commons/b/be/Booking.com_logo.svg"
                 alt="Booking.com"
-                width={80}
-                height={20}
                 className="h-5 w-auto"
               />
             </a>
             <a 
-              href="https://airbnb.com" 
+              href="https://www.airbnb.com/rooms/783059292361852024?unique_share_id=4a1bcc2d-6b7b-4aef-a34f-40e1c0ace11f&viralityEntryPoint=1&s=76&source_impression_id=p3_1777891487_P3Knm7EEsvBkA_Zo" 
               target="_blank" 
               rel="noopener noreferrer"
               className={`flex items-center justify-center p-2 rounded-lg transition-all hover:scale-105 ${
@@ -144,11 +153,10 @@ export function Header() {
               }`}
               aria-label="Book on Airbnb"
             >
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg"
                 alt="Airbnb"
-                width={70}
-                height={22}
                 className="h-5 w-auto"
               />
             </a>
@@ -166,7 +174,12 @@ export function Header() {
                     isScrolled ? "" : "text-white hover:bg-white/20"
                   }`}
                 >
-                  <span className="text-lg">{getFlagEmoji(language)}</span>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img 
+                    src={getFlagImage(language).src} 
+                    alt={getFlagImage(language).alt}
+                    className="rounded-sm shadow-sm w-6 h-4"
+                  />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
@@ -176,7 +189,12 @@ export function Header() {
                     onClick={() => setLanguage(lang.code)}
                     className={language === lang.code ? "bg-accent/10" : ""}
                   >
-                    <span className="text-lg mr-2">{lang.flag}</span>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img 
+                      src={getFlagImage(lang.code).src} 
+                      alt={getFlagImage(lang.code).alt}
+                      className="rounded-sm shadow-sm mr-2 w-6 h-4"
+                    />
                     <span>{lang.label}</span>
                   </DropdownMenuItem>
                 ))}
@@ -216,12 +234,12 @@ export function Header() {
             ))}
             <div className="pt-4 flex flex-col gap-3">
               <Button variant="outline" className="w-full" asChild>
-                <a href="https://booking.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.booking.com/hotel/hu/brand-new-panoramic-flat-at-chain-bridge-with-gorgeous-view.en-gb.html?label=gen173nr-10CAEoggI46AdIM1gEaGeIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AqXe5c8GwAIB0gIkYjczNmM2NjItMzc5Yi00OThjLTgyNDgtMzg4YTBkOWFhZjU52AIB4AIB&aid=304142&ucfs=1&arphpl=1&checkin=2026-05-19&checkout=2026-05-22" target="_blank" rel="noopener noreferrer">
                   {t.hero.bookBooking}
                 </a>
               </Button>
               <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground" asChild>
-                <a href="https://airbnb.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.airbnb.com/rooms/783059292361852024?unique_share_id=4a1bcc2d-6b7b-4aef-a34f-40e1c0ace11f&viralityEntryPoint=1&s=76&source_impression_id=p3_1777891487_P3Knm7EEsvBkA_Zo" target="_blank" rel="noopener noreferrer">
                   {t.hero.bookAirbnb}
                 </a>
               </Button>

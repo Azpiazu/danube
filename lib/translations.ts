@@ -21,8 +21,8 @@ export const translations = {
     // Hero
     hero: {
       badge: "Guest Favorite · Superhost",
-      headline: "A boutique Danube-view apartment by Chain Bridge",
-      subheadline: "A stylish 2-bedroom apartment on the Buda riverfront, with panoramic views of the Danube, Chain Bridge, Parliament and St. Stephen's Basilica — designed for couples, families and small groups who want to experience Budapest from one of its most beautiful locations.",
+      headline: "Stay Above Budapest's Most Iconic View",
+      subheadline: "Boutique 2-bedroom apartment on the Buda riverfront, overlooking the Széchenyi Chain Bridge, the Hungarian Parliament Building, and the Danube. Wake up to the city's most breathtaking panorama.",
       bookAirbnb: "Book on Airbnb",
       bookBooking: "Book on Booking.com",
     },
@@ -38,6 +38,7 @@ export const translations = {
       communication: "Communication",
       guestRating: "Airbnb guest rating",
       responseTime: "Response time",
+      greatResponseTime: "Great response time",
       guestFavorite: "Guest Favorite",
       superhost: "Superhost",
     },
@@ -74,6 +75,9 @@ export const translations = {
       queenBed: "queen bed",
       sofaBedDesc: "sofa bed",
       danubeViews: "Danube, city skyline & Chain Bridge views",
+      chainBridgeView: "Chain Bridge View",
+      parliamentView: "Parliament View",
+      photos: "photos",
     },
     // Budapest Map
     map: {
@@ -134,6 +138,7 @@ export const translations = {
       rooftopBars: "Rooftop Bars",
       thermalBaths: "Thermal Baths",
       nightlife: "Nightlife",
+      sameBuilding: "Same building",
     },
     // First Walk
     firstWalk: {
@@ -141,6 +146,9 @@ export const translations = {
       title: "Your first walk",
       description: "Three suggested routes to help you discover Budapest's highlights at your own pace.",
       viewRoute: "View route",
+      shortWalk: "Short walk",
+      classicWalk: "Classic walk",
+      sunsetWalk: "Sunset walk",
     },
     // Check-in
     checkIn: {
@@ -155,6 +163,7 @@ export const translations = {
       flexibleCheckInDesc: "Early or late check-in available on request",
       luggageStorage: "Luggage storage",
       luggageStorageDesc: "Store your bags before check-in or after check-out",
+      luggageStorageDescAvailability: "Store your bags before check-in or after check-out (based on availability)",
     },
     // Guest Guide
     guestGuide: {
@@ -180,7 +189,7 @@ export const translations = {
       maxGuests: "Maximum 5 guests",
       noPets: "No pets allowed",
       goodToKnow: "Good to know",
-      thirdFloor: "Third floor walk-up (no elevator)",
+      firstFloor: "First floor walk-up (no elevator)",
       streetParking: "Street parking available nearby",
       historicBuilding: "Historic building with character features",
     },
@@ -213,6 +222,14 @@ export const translations = {
       bookBooking: "Book on Booking.com",
       orContact: "Or send us a message",
       contactUs: "Contact Us",
+      name: "Name",
+      namePlaceholder: "Your name",
+      email: "Email",
+      emailPlaceholder: "your@email.com",
+      message: "Message",
+      messagePlaceholder: "Your message...",
+      sendMessage: "Send Message",
+      sending: "Sending...",
     },
     // Footer
     footer: {
@@ -228,6 +245,7 @@ export const translations = {
       reviews: "Reviews",
       budapest: "Budapest, Hungary",
       budaRiverside: "Buda riverside, near Chain Bridge",
+      disclaimer: "This is an information page only. For exact features, availability, and booking conditions, please check Airbnb and Booking.com.",
     },
   },
   es: {
@@ -244,8 +262,8 @@ export const translations = {
     // Hero
     hero: {
       badge: "Favorito de los huéspedes · Superanfitrión",
-      headline: "Un apartamento boutique con vistas al Danubio junto al Puente de las Cadenas",
-      subheadline: "Un elegante apartamento de 2 dormitorios en la ribera de Buda, con vistas panorámicas al Danubio, el Puente de las Cadenas, el Parlamento y la Basílica de San Esteban — diseñado para parejas, familias y pequeños grupos que desean experimentar Budapest desde una de sus ubicaciones más hermosas.",
+      headline: "Alójate Sobre la Vista Más Icónica de Budapest",
+      subheadline: "Apartamento boutique de 2 dormitorios en la ribera de Buda, con vistas al Puente de las Cadenas Széchenyi, el Parlamento Húngaro y el Danubio. Despierta con el panorama más impresionante de la ciudad.",
       bookAirbnb: "Reservar en Airbnb",
       bookBooking: "Reservar en Booking.com",
     },
@@ -261,6 +279,7 @@ export const translations = {
       communication: "Comunicación",
       guestRating: "Valoración huéspedes Airbnb",
       responseTime: "Tiempo de respuesta",
+      greatResponseTime: "Gran tiempo de respuesta",
       guestFavorite: "Favorito de huéspedes",
       superhost: "Superanfitrión",
     },
@@ -297,6 +316,9 @@ export const translations = {
       queenBed: "cama queen",
       sofaBedDesc: "sofá cama",
       danubeViews: "Vistas al Danubio, horizonte urbano y Puente de las Cadenas",
+      chainBridgeView: "Vista del Puente de las Cadenas",
+      parliamentView: "Vista del Parlamento",
+      photos: "fotos",
     },
     // Budapest Map
     map: {
@@ -357,15 +379,19 @@ export const translations = {
       rooftopBars: "Terrazas",
       thermalBaths: "Baños termales",
       nightlife: "Vida nocturna",
+      sameBuilding: "Mismo edificio",
     },
     // First Walk
-    firstWalk: {
-      sectionLabel: "Primeros pasos",
-      title: "Tu primer paseo",
-      description: "Tres rutas sugeridas para ayudarte a descubrir lo mejor de Budapest a tu propio ritmo.",
-      viewRoute: "Ver ruta",
-    },
-    // Check-in
+  firstWalk: {
+  sectionLabel: "Primeros pasos",
+  title: "Tu primer paseo",
+  description: "Tres rutas sugeridas para ayudarte a descubrir lo mejor de Budapest a tu propio ritmo.",
+  viewRoute: "Ver ruta",
+  shortWalk: "Paseo corto",
+  classicWalk: "Paseo clásico",
+  sunsetWalk: "Paseo al atardecer",
+  },
+  // Check-in
     checkIn: {
       sectionLabel: "Llegada",
       title: "Información de check-in",
@@ -378,6 +404,7 @@ export const translations = {
       flexibleCheckInDesc: "Check-in temprano o tardío disponible bajo petición",
       luggageStorage: "Guardaequipajes",
       luggageStorageDesc: "Guarda tu equipaje antes del check-in o después del check-out",
+      luggageStorageDescAvailability: "Guarda tu equipaje antes del check-in o después del check-out (según disponibilidad)",
     },
     // Guest Guide
     guestGuide: {
@@ -403,7 +430,7 @@ export const translations = {
       maxGuests: "Máximo 5 huéspedes",
       noPets: "No se admiten mascotas",
       goodToKnow: "Bueno saber",
-      thirdFloor: "Tercer piso sin ascensor",
+      firstFloor: "Primer piso sin ascensor",
       streetParking: "Aparcamiento en la calle disponible cerca",
       historicBuilding: "Edificio histórico con características de época",
     },
@@ -436,6 +463,14 @@ export const translations = {
       bookBooking: "Reservar en Booking.com",
       orContact: "O envíanos un mensaje",
       contactUs: "Contáctanos",
+      name: "Nombre",
+      namePlaceholder: "Tu nombre",
+      email: "Correo electrónico",
+      emailPlaceholder: "tu@email.com",
+      message: "Mensaje",
+      messagePlaceholder: "Tu mensaje...",
+      sendMessage: "Enviar Mensaje",
+      sending: "Enviando...",
     },
     // Footer
     footer: {
@@ -451,6 +486,7 @@ export const translations = {
       reviews: "Reseñas",
       budapest: "Budapest, Hungría",
       budaRiverside: "Ribera de Buda, cerca del Puente de las Cadenas",
+      disclaimer: "Esta es solo una página informativa. Para características exactas, disponibilidad y condiciones de reserva, consulte Airbnb y Booking.com.",
     },
   },
   hu: {
@@ -467,8 +503,8 @@ export const translations = {
     // Hero
     hero: {
       badge: "Vendégek kedvence · Szuperházigazda",
-      headline: "Boutique Duna-panorámás lakás a Lánchídnál",
-      subheadline: "Stílusos 2 hálószobás lakás a budai Duna-parton, panorámás kilátással a Dunára, a Lánchídra, a Parlamentre és a Szent István Bazilikára — pároknak, családoknak és kis csoportoknak, akik Budapest egyik legszebb helyéről szeretnék felfedezni a várost.",
+  headline: "Szállj meg Budapest legikonikusabb kilátása felett",
+  subheadline: "Boutique 2 hálószobás lakás a budai Duna-parton, kilátással a Széchenyi Lánchídra, a Magyar Országházra és a Dunára. Ébredj a város leglélegzetelállítóbb panorámájára.",
       bookAirbnb: "Foglalás Airbnb-n",
       bookBooking: "Foglalás Booking.com-on",
     },
@@ -484,6 +520,7 @@ export const translations = {
       communication: "Kommunikáció",
       guestRating: "Airbnb vendég értékelés",
       responseTime: "Válaszidő",
+      greatResponseTime: "Kiváló válaszidő",
       guestFavorite: "Vendégek kedvence",
       superhost: "Szuperházigazda",
     },
@@ -520,6 +557,9 @@ export const translations = {
       queenBed: "dupla ágy",
       sofaBedDesc: "kanapéágy",
       danubeViews: "Duna, városi panoráma és Lánchíd kilátás",
+      chainBridgeView: "Lánchíd kilátás",
+      parliamentView: "Parlament kilátás",
+      photos: "fotók",
     },
     // Budapest Map
     map: {
@@ -580,6 +620,7 @@ export const translations = {
       rooftopBars: "Tetőbárok",
       thermalBaths: "Gyógyfürdők",
       nightlife: "Éjszakai élet",
+      sameBuilding: "Ugyanabban az épületben",
     },
     // First Walk
     firstWalk: {
@@ -587,6 +628,9 @@ export const translations = {
       title: "Az első sétád",
       description: "Három javasolt útvonal, hogy saját tempódban fedezd fel Budapest látványosságait.",
       viewRoute: "Útvonal megtekintése",
+      shortWalk: "Rövid séta",
+      classicWalk: "Klasszikus séta",
+      sunsetWalk: "Naplemente séta",
     },
     // Check-in
     checkIn: {
@@ -601,6 +645,7 @@ export const translations = {
       flexibleCheckInDesc: "Korai vagy késői bejelentkezés kérésre elérhető",
       luggageStorage: "Csomagmegőrzés",
       luggageStorageDesc: "Tárold a csomagjaidat bejelentkezés előtt vagy kijelentkezés után",
+      luggageStorageDescAvailability: "Tárold a csomagjaidat bejelentkezés előtt vagy kijelentkezés után (elérhetőség függvényében)",
     },
     // Guest Guide
     guestGuide: {
@@ -626,7 +671,7 @@ export const translations = {
       maxGuests: "Maximum 5 vendég",
       noPets: "Háziállat nem engedélyezett",
       goodToKnow: "Jó tudni",
-      thirdFloor: "Harmadik emelet, lift nélkül",
+      firstFloor: "Első emelet, lift nélkül",
       streetParking: "Utcai parkolás elérhető a közelben",
       historicBuilding: "Történelmi épület jellegzetes elemekkel",
     },
@@ -659,6 +704,14 @@ export const translations = {
       bookBooking: "Foglalás Booking.com-on",
       orContact: "Vagy küldj üzenetet",
       contactUs: "Kapcsolatfelvétel",
+      name: "Név",
+      namePlaceholder: "A neved",
+      email: "E-mail",
+      emailPlaceholder: "te@email.com",
+      message: "Üzenet",
+      messagePlaceholder: "Az üzeneted...",
+      sendMessage: "Üzenet küldése",
+      sending: "Küldés...",
     },
     // Footer
     footer: {
@@ -674,6 +727,7 @@ export const translations = {
       reviews: "Vélemények",
       budapest: "Budapest, Magyarország",
       budaRiverside: "Budai rakpart, a Lánchíd közelében",
+      disclaimer: "Ez csak egy tájékoztató oldal. A pontos jellemzőkért, elérhetőségért és foglal��si feltételekért kérjük, ellenőrizze az Airbnb-t és a Booking.com-ot.",
     },
   },
 }
