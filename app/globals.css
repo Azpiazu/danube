@@ -152,7 +152,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Section fade-in animations */
+/* Hero entrance animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -164,8 +164,35 @@ html {
   }
 }
 
-section {
-  animation: fadeInUp 0.8s ease-out;
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Intersection Observer based animations */

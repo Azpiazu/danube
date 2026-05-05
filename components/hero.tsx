@@ -14,7 +14,7 @@ export function Hero() {
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/shutterstock_2691187215-tT8QAnlUH5QeIsvOhMe7oSyiupQCyE.jpg"
           alt="Panoramic view of Chain Bridge and Buda Castle illuminated at sunset"
           fill
-          className="object-cover"
+          className="object-cover animate-[scaleIn_1.5s_ease-out]"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/20" />
@@ -23,7 +23,7 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center pt-24">
         {/* Logo - Large, integrated with rounded corners and transparency */}
-        <div className="mb-10 flex items-center justify-center">
+        <div className="mb-10 flex items-center justify-center animate-[fadeInDown_1s_ease-out]">
           <div className="rounded-3xl overflow-hidden bg-white/70 backdrop-blur-sm p-6 sm:p-8">
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-yA3b7lgcaB1DZcxlOaG9Swb0P9BHMJ.png"
@@ -36,17 +36,17 @@ export function Hero() {
         </div>
 
         {/* Headline */}
-        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-primary text-balance leading-tight drop-shadow-sm">
+        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-primary text-balance leading-tight drop-shadow-sm animate-[fadeInUp_1s_ease-out_0.3s_both]">
           {t.hero.headline}
         </h1>
 
         {/* Subheadline */}
-        <p className="mt-8 text-lg sm:text-xl text-foreground/90 max-w-3xl mx-auto text-pretty leading-relaxed">
+        <p className="mt-8 text-lg sm:text-xl text-foreground/90 max-w-3xl mx-auto text-pretty leading-relaxed animate-[fadeInUp_1s_ease-out_0.5s_both]">
           {t.hero.subheadline}
         </p>
 
         {/* Airbnb Badges - After text */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3 animate-[fadeInUp_1s_ease-out_0.7s_both]">
           {/* Guest Favorite Badge */}
           <div className="inline-flex items-center gap-2 rounded-full bg-background/90 backdrop-blur-sm px-4 py-2 shadow-sm border border-border">
             <svg viewBox="0 0 24 24" className="h-5 w-5 text-[#FF385C]" fill="currentColor">
