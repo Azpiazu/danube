@@ -136,7 +136,7 @@ export function Header() {
               />
             </a>
             <a 
-              href="https://airbnb.com" 
+              href="https://www.airbnb.com/rooms/783059292361852024?unique_share_id=4a1bcc2d-6b7b-4aef-a34f-40e1c0ace11f&viralityEntryPoint=1&s=76&source_impression_id=p3_1777891487_P3Knm7EEsvBkA_Zo" 
               target="_blank" 
               rel="noopener noreferrer"
               className={`flex items-center justify-center p-2 rounded-lg transition-all hover:scale-105 ${
@@ -221,7 +221,7 @@ export function Header() {
                 </a>
               </Button>
               <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground" asChild>
-                <a href="https://airbnb.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.airbnb.com/rooms/783059292361852024?unique_share_id=4a1bcc2d-6b7b-4aef-a34f-40e1c0ace11f&viralityEntryPoint=1&s=76&source_impression_id=p3_1777891487_P3Knm7EEsvBkA_Zo" target="_blank" rel="noopener noreferrer">
                   {t.hero.bookAirbnb}
                 </a>
               </Button>
