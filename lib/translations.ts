@@ -222,6 +222,14 @@ export const translations = {
       bookBooking: "Book on Booking.com",
       orContact: "Or send us a message",
       contactUs: "Contact Us",
+      name: "Name",
+      namePlaceholder: "Your name",
+      email: "Email",
+      emailPlaceholder: "your@email.com",
+      message: "Message",
+      messagePlaceholder: "Your message...",
+      sendMessage: "Send Message",
+      sending: "Sending...",
     },
     // Footer
     footer: {
@@ -455,6 +463,14 @@ export const translations = {
       bookBooking: "Reservar en Booking.com",
       orContact: "O envíanos un mensaje",
       contactUs: "Contáctanos",
+      name: "Nombre",
+      namePlaceholder: "Tu nombre",
+      email: "Correo electrónico",
+      emailPlaceholder: "tu@email.com",
+      message: "Mensaje",
+      messagePlaceholder: "Tu mensaje...",
+      sendMessage: "Enviar Mensaje",
+      sending: "Enviando...",
     },
     // Footer
     footer: {
@@ -688,6 +704,14 @@ export const translations = {
       bookBooking: "Foglalás Booking.com-on",
       orContact: "Vagy küldj üzenetet",
       contactUs: "Kapcsolatfelvétel",
+      name: "Név",
+      namePlaceholder: "A neved",
+      email: "E-mail",
+      emailPlaceholder: "te@email.com",
+      message: "Üzenet",
+      messagePlaceholder: "Az üzeneted...",
+      sendMessage: "Üzenet küldése",
+      sending: "Küldés...",
     },
     // Footer
     footer: {

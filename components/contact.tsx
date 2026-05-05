@@ -1,11 +1,20 @@
 "use client"
 
+import { useActionState } from "react"
 import { Button } from "@/components/ui/button"
-import { Mail } from "lucide-react"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
+import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
+import { sendContactEmail, type ContactFormState } from "@/app/actions/contact"
 
 export function Contact() {
   const { t } = useLanguage()
+  const [state, formAction, isPending] = useActionState<ContactFormState, FormData>(
+    sendContactEmail,
+    null
+  )
 
   return (
     <section id="contact" className="py-20 sm:py-28 bg-background">
@@ -36,16 +45,83 @@ export function Contact() {
             </Button>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Form */}
           <div className="pt-8 border-t border-border">
-            <p className="text-sm text-muted-foreground mb-4">{t.contact.orContact}</p>
-            <a
-              href="mailto:hello@danubewaterfrontview.com"
-              className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors"
-            >
-              <Mail className="h-5 w-5" />
-              <span>{t.contact.contactUs}</span>
-            </a>
+            <p className="text-sm text-muted-foreground mb-6">{t.contact.orContact}</p>
+            
+            <form action={formAction} className="max-w-md mx-auto space-y-4 text-left">
+              <div className="space-y-2">
+                <Label htmlFor="name">{t.contact.name || "Name"}</Label>
+                <Input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder={t.contact.namePlaceholder || "Your name"}
+                  required
+                  disabled={isPending}
+                />
+              </div>
+              
+              <div className="space-y-2">
+                <Label htmlFor="email">{t.contact.email || "Email"}</Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder={t.contact.emailPlaceholder || "your@email.com"}
+                  required
+                  disabled={isPending}
+                />
+              </div>
+              
+              <div className="space-y-2">
+                <Label htmlFor="message">{t.contact.message || "Message"}</Label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  placeholder={t.contact.messagePlaceholder || "Your message..."}
+                  rows={4}
+                  required
+                  disabled={isPending}
+                />
+              </div>
+
+              {/* Status Message */}
+              {state && (
+                <div
+                  className={`flex items-center gap-2 p-3 rounded-lg text-sm ${
+                    state.success
+                      ? "bg-green-50 text-green-700 dark:bg-green-900/20 dark:text-green-400"
+                      : "bg-red-50 text-red-700 dark:bg-red-900/20 dark:text-red-400"
+                  }`}
+                >
+                  {state.success ? (
+                    <CheckCircle className="h-4 w-4 shrink-0" />
+                  ) : (
+                    <AlertCircle className="h-4 w-4 shrink-0" />
+                  )}
+                  <span>{state.message}</span>
+                </div>
+              )}
+
+              <Button
+                type="submit"
+                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
+                disabled={isPending}
+              >
+                {isPending ? (
+                  <>
+                    <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                    {t.contact.sending || "Sending..."}
+                  </>
+                ) : (
+                  <>
+                    <Send className="h-4 w-4 mr-2" />
+                    {t.contact.sendMessage || "Send Message"}
+                  </>
+                )}
+              </Button>
+            </form>
           </div>
         </div>
       </div>
