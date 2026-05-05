@@ -8,19 +8,19 @@ export function FirstWalk() {
 
   const walks = [
     {
-      title: "Short walk",
+      title: t.firstWalk.shortWalk,
       duration: "30–45 min",
       route: `Danube → ${t.walking.chainBridge} → ${t.walking.clarkAdam}`,
       icon: Route,
     },
     {
-      title: "Classic walk",
+      title: t.firstWalk.classicWalk,
       duration: "1.5–2 h",
       route: `${t.walking.chainBridge} → ${t.walking.basilica} → ${t.walking.parliament}`,
       icon: Clock,
     },
     {
-      title: "Sunset walk",
+      title: t.firstWalk.sunsetWalk,
       duration: "60–90 min",
       route: `${t.walking.chainBridge} → ${t.walking.budaCastle} → ${t.walking.fishermansBastion}`,
       icon: Sunset,

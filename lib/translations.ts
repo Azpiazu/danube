@@ -145,6 +145,9 @@ export const translations = {
       title: "Your first walk",
       description: "Three suggested routes to help you discover Budapest's highlights at your own pace.",
       viewRoute: "View route",
+      shortWalk: "Short walk",
+      classicWalk: "Classic walk",
+      sunsetWalk: "Sunset walk",
     },
     // Check-in
     checkIn: {
@@ -368,14 +371,17 @@ export const translations = {
       thermalBaths: "Baños termales",
       nightlife: "Vida nocturna",
     },
-    // First Walk
-    firstWalk: {
-      sectionLabel: "Primeros pasos",
-      title: "Tu primer paseo",
-      description: "Tres rutas sugeridas para ayudarte a descubrir lo mejor de Budapest a tu propio ritmo.",
-      viewRoute: "Ver ruta",
-    },
-    // Check-in
+  // First Walk
+  firstWalk: {
+  sectionLabel: "Primeros pasos",
+  title: "Tu primer paseo",
+  description: "Tres rutas sugeridas para ayudarte a descubrir lo mejor de Budapest a tu propio ritmo.",
+  viewRoute: "Ver ruta",
+  shortWalk: "Paseo corto",
+  classicWalk: "Paseo clásico",
+  sunsetWalk: "Paseo al atardecer",
+  },
+  // Check-in
     checkIn: {
       sectionLabel: "Llegada",
       title: "Información de check-in",
@@ -603,6 +609,9 @@ export const translations = {
       title: "Az első sétád",
       description: "Három javasolt útvonal, hogy saját tempódban fedezd fel Budapest látványosságait.",
       viewRoute: "Útvonal megtekintése",
+      shortWalk: "Rövid séta",
+      classicWalk: "Klasszikus séta",
+      sunsetWalk: "Naplemente séta",
     },
     // Check-in
     checkIn: {
@@ -691,7 +700,7 @@ export const translations = {
       reviews: "Vélemények",
       budapest: "Budapest, Magyarország",
       budaRiverside: "Budai rakpart, a Lánchíd közelében",
-      disclaimer: "Ez csak egy tájékoztató oldal. A pontos jellemzőkért, elérhetőségért és foglalási feltételekért kérjük, ellenőrizze az Airbnb-t és a Booking.com-ot.",
+      disclaimer: "Ez csak egy tájékoztató oldal. A pontos jellemzőkért, elérhetőségért és foglal��si feltételekért kérjük, ellenőrizze az Airbnb-t és a Booking.com-ot.",
     },
   },
 }
