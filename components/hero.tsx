@@ -22,6 +22,17 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center pt-24">
+        {/* Logo - Above everything, large and integrated */}
+        <div className="mb-8 flex items-center justify-center">
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-yA3b7lgcaB1DZcxlOaG9Swb0P9BHMJ.png"
+            alt="Danube Waterfront at Chain Bridge"
+            width={320}
+            height={160}
+            className="h-24 sm:h-32 md:h-40 w-auto opacity-90 drop-shadow-lg"
+          />
+        </div>
+
         {/* Airbnb Badges */}
         <div className="mb-6 flex flex-wrap items-center justify-center gap-3">
           {/* Guest Favorite Badge */}
@@ -50,19 +61,6 @@ export function Hero() {
         <p className="mt-8 text-lg sm:text-xl text-foreground/90 max-w-3xl mx-auto text-pretty leading-relaxed">
           {t.hero.subheadline}
         </p>
-
-        {/* Logo */}
-        <div className="mt-10 flex items-center justify-center">
-          <div className="bg-background/90 backdrop-blur-sm rounded-xl p-4 shadow-sm border border-border">
-            <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-yA3b7lgcaB1DZcxlOaG9Swb0P9BHMJ.png"
-              alt="Danube Waterfront at Chain Bridge"
-              width={180}
-              height={90}
-              className="h-16 w-auto"
-            />
-          </div>
-        </div>
 
         {/* Scroll indicator */}
         <div className="mt-16 sm:mt-24 animate-bounce">

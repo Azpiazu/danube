@@ -43,17 +43,18 @@ export function BudapestMap() {
         </div>
 
         {/* Map Image */}
-        <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-accent/20">
-          <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-yCXo1FIfmbKEWpcNt3Gfr9DB6pFpmB.png"
-            alt="Illustrated map of Budapest showing walking distances from the apartment to major landmarks including Chain Bridge, Parliament, Buda Castle, Fisherman's Bastion, and more"
-            width={2800}
-            height={1800}
-            className="w-full h-auto"
-            quality={100}
-            unoptimized
-            priority
-          />
+        <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-accent/20 bg-card">
+          <div className="relative w-full" style={{ paddingBottom: '64.29%' }}>
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-yCXo1FIfmbKEWpcNt3Gfr9DB6pFpmB.png"
+              alt="Illustrated map of Budapest showing walking distances from the apartment to major landmarks including Chain Bridge, Parliament, Buda Castle, Fisherman's Bastion, and more"
+              fill
+              className="object-contain"
+              quality={100}
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              priority
+            />
+          </div>
         </div>
 
         {/* Map Caption */}
