@@ -99,12 +99,11 @@ export function Header() {
                     isScrolled ? "" : "text-white hover:bg-white/20"
                   }`}
                 >
-                  <Image 
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img 
                     src={getFlagImage(language).src} 
                     alt={getFlagImage(language).alt}
-                    width={24}
-                    height={18}
-                    className="rounded-sm shadow-sm"
+                    className="rounded-sm shadow-sm w-6 h-4"
                   />
                   <Globe className="h-4 w-4" />
                 </Button>
@@ -116,12 +115,11 @@ export function Header() {
                     onClick={() => setLanguage(lang.code)}
                     className={language === lang.code ? "bg-accent/10" : ""}
                   >
-                    <Image 
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img 
                       src={getFlagImage(lang.code).src} 
                       alt={getFlagImage(lang.code).alt}
-                      width={24}
-                      height={18}
-                      className="rounded-sm shadow-sm mr-2"
+                      className="rounded-sm shadow-sm mr-2 w-6 h-4"
                     />
                     <span>{lang.label}</span>
                   </DropdownMenuItem>
@@ -139,11 +137,10 @@ export function Header() {
               }`}
               aria-label="Book on Booking.com"
             >
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="https://upload.wikimedia.org/wikipedia/commons/b/be/Booking.com_logo.svg"
                 alt="Booking.com"
-                width={80}
-                height={20}
                 className="h-5 w-auto"
               />
             </a>
@@ -156,11 +153,10 @@ export function Header() {
               }`}
               aria-label="Book on Airbnb"
             >
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg"
                 alt="Airbnb"
-                width={70}
-                height={22}
                 className="h-5 w-auto"
               />
             </a>
@@ -178,12 +174,11 @@ export function Header() {
                     isScrolled ? "" : "text-white hover:bg-white/20"
                   }`}
                 >
-                  <Image 
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img 
                     src={getFlagImage(language).src} 
                     alt={getFlagImage(language).alt}
-                    width={24}
-                    height={18}
-                    className="rounded-sm shadow-sm"
+                    className="rounded-sm shadow-sm w-6 h-4"
                   />
                 </Button>
               </DropdownMenuTrigger>
@@ -194,12 +189,11 @@ export function Header() {
                     onClick={() => setLanguage(lang.code)}
                     className={language === lang.code ? "bg-accent/10" : ""}
                   >
-                    <Image 
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img 
                       src={getFlagImage(lang.code).src} 
                       alt={getFlagImage(lang.code).alt}
-                      width={24}
-                      height={18}
-                      className="rounded-sm shadow-sm mr-2"
+                      className="rounded-sm shadow-sm mr-2 w-6 h-4"
                     />
                     <span>{lang.label}</span>
                   </DropdownMenuItem>

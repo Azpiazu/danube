@@ -126,14 +126,17 @@ export function Reviews() {
 
           {/* Carousel Controls */}
           <div className="flex items-center justify-center gap-4 mt-6">
-            <Button variant="outline" size="icon" onClick={prevReview}>
+            <Button variant="outline" size="icon" onClick={prevReview} aria-label={t.reviews.previousReview || "Previous review"}>
               <ChevronLeft className="h-4 w-4" />
             </Button>
-            <div className="flex gap-2">
+            <div className="flex gap-2" role="tablist" aria-label={t.reviews.sectionLabel || "Review navigation"}>
               {reviews.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
+                  role="tab"
+                  aria-selected={index === currentIndex}
+                  aria-label={`${t.reviews.goToReview || "Go to review"} ${index + 1}`}
                   className={`h-2 rounded-full transition-all ${
                     index === currentIndex
                       ? "w-6 bg-accent"
@@ -142,7 +145,7 @@ export function Reviews() {
                 />
               ))}
             </div>
-            <Button variant="outline" size="icon" onClick={nextReview}>
+            <Button variant="outline" size="icon" onClick={nextReview} aria-label={t.reviews.nextReview || "Next review"}>
               <ChevronRight className="h-4 w-4" />
             </Button>
           </div>

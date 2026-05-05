@@ -50,9 +50,9 @@ export function BudapestMap() {
               alt="Illustrated map of Budapest showing walking distances from the apartment to major landmarks including Chain Bridge, Parliament, Buda Castle, Fisherman's Bastion, and more"
               fill
               className="object-contain"
-              quality={100}
               sizes="(max-width: 1280px) 100vw, 1280px"
               priority
+              unoptimized
             />
           </div>
         </div>

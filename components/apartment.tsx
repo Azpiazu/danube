@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { 
   Home, 
   Users, 
@@ -26,6 +26,42 @@ export function Apartment() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [galleryPage, setGalleryPage] = useState(0)
   const imagesPerPage = 8
+
+  const galleryLength = 11 // Total number of gallery images
+
+  // Keyboard navigation for lightbox
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (!lightboxOpen) return
+    
+    switch (e.key) {
+      case 'ArrowLeft':
+        setCurrentImageIndex((prev) => (prev === 0 ? galleryLength - 1 : prev - 1))
+        break
+      case 'ArrowRight':
+        setCurrentImageIndex((prev) => (prev === galleryLength - 1 ? 0 : prev + 1))
+        break
+      case 'Escape':
+        setLightboxOpen(false)
+        break
+    }
+  }, [lightboxOpen])
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [handleKeyDown])
+
+  // Prevent body scroll when lightbox is open
+  useEffect(() => {
+    if (lightboxOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [lightboxOpen])
 
   const features = [
     { icon: Home, label: t.apartment.sectionLabel },
