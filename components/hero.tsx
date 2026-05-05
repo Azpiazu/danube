@@ -1,6 +1,5 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
 
@@ -52,18 +51,17 @@ export function Hero() {
           {t.hero.subheadline}
         </p>
 
-        {/* CTAs */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground px-8" asChild>
-            <a href="https://airbnb.com" target="_blank" rel="noopener noreferrer">
-              {t.hero.bookAirbnb}
-            </a>
-          </Button>
-          <Button size="lg" variant="outline" className="px-8 bg-background/80 backdrop-blur-sm" asChild>
-            <a href="https://booking.com" target="_blank" rel="noopener noreferrer">
-              {t.hero.bookBooking}
-            </a>
-          </Button>
+        {/* Logo */}
+        <div className="mt-10 flex items-center justify-center">
+          <div className="bg-background/90 backdrop-blur-sm rounded-xl p-4 shadow-sm border border-border">
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-yA3b7lgcaB1DZcxlOaG9Swb0P9BHMJ.png"
+              alt="Danube Waterfront at Chain Bridge"
+              width={180}
+              height={90}
+              className="h-16 w-auto"
+            />
+          </div>
         </div>
 
         {/* Scroll indicator */}

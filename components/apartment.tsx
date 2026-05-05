@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { 
   Home, 
   Users, 
@@ -11,13 +12,18 @@ import {
   UtensilsCrossed,
   Tv,
   Mountain,
-  Sofa
+  Sofa,
+  ChevronLeft,
+  ChevronRight,
+  X
 } from "lucide-react"
 import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
 
 export function Apartment() {
   const { t } = useLanguage()
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   const features = [
     { icon: Home, label: t.apartment.sectionLabel },
@@ -136,11 +142,14 @@ export function Apartment() {
 
         {/* Image Gallery - Clean Aligned Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {/* Row 1 - 4 images */}
-          {galleryImages.slice(0, 4).map((image, index) => (
-            <div 
+          {galleryImages.map((image, index) => (
+            <button 
               key={index} 
-              className="relative aspect-[4/3] rounded-2xl overflow-hidden group"
+              className="relative aspect-[4/3] rounded-2xl overflow-hidden group cursor-pointer"
+              onClick={() => {
+                setCurrentImageIndex(index)
+                setLightboxOpen(true)
+              }}
             >
               <Image
                 src={image.src}
@@ -151,28 +160,87 @@ export function Apartment() {
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
                 <p className="text-white text-sm font-medium">{image.label}</p>
               </div>
-            </div>
-          ))}
-          
-          {/* Row 2 - 4 images */}
-          {galleryImages.slice(4, 8).map((image, index) => (
-            <div 
-              key={index + 4} 
-              className="relative aspect-[4/3] rounded-2xl overflow-hidden group"
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
-                <p className="text-white text-sm font-medium">{image.label}</p>
-              </div>
-            </div>
+            </button>
           ))}
         </div>
+
+        {/* Image Counter */}
+        <div className="flex justify-center mt-6">
+          <div className="flex items-center gap-2">
+            {galleryImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  setCurrentImageIndex(index)
+                  setLightboxOpen(true)
+                }}
+                className={`w-2 h-2 rounded-full transition-colors ${
+                  index === currentImageIndex ? "bg-accent" : "bg-muted-foreground/30"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
+
+      {/* Lightbox */}
+      {lightboxOpen && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
+          onClick={() => setLightboxOpen(false)}
+        >
+          {/* Close button */}
+          <button
+            onClick={() => setLightboxOpen(false)}
+            className="absolute top-4 right-4 text-white/80 hover:text-white z-50 p-2"
+          >
+            <X className="h-8 w-8" />
+          </button>
+
+          {/* Previous button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              setCurrentImageIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1))
+            }}
+            className="absolute left-4 text-white/80 hover:text-white z-50 p-2"
+          >
+            <ChevronLeft className="h-10 w-10" />
+          </button>
+
+          {/* Image */}
+          <div 
+            className="relative w-full max-w-5xl h-[80vh] mx-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={galleryImages[currentImageIndex].src}
+              alt={galleryImages[currentImageIndex].alt}
+              fill
+              className="object-contain"
+            />
+            <div className="absolute bottom-4 left-0 right-0 text-center">
+              <p className="text-white text-lg font-medium">
+                {galleryImages[currentImageIndex].label}
+              </p>
+              <p className="text-white/70 text-sm mt-1">
+                {currentImageIndex + 1} / {galleryImages.length}
+              </p>
+            </div>
+          </div>
+
+          {/* Next button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              setCurrentImageIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1))
+            }}
+            className="absolute right-4 text-white/80 hover:text-white z-50 p-2"
+          >
+            <ChevronRight className="h-10 w-10" />
+          </button>
+        </div>
+      )}
     </section>
   )
 }

@@ -21,7 +21,7 @@ export const translations = {
     // Hero
     hero: {
       badge: "Guest Favorite · Superhost",
-      headline: "A boutique Danube-view apartment by Chain Bridge",
+      headline: "A boutique Danube-view apartment at Chain Bridge",
       subheadline: "A stylish 2-bedroom apartment on the Buda riverfront, with panoramic views of the Danube, Chain Bridge, Parliament and St. Stephen's Basilica — designed for couples, families and small groups who want to experience Budapest from one of its most beautiful locations.",
       bookAirbnb: "Book on Airbnb",
       bookBooking: "Book on Booking.com",
@@ -38,6 +38,7 @@ export const translations = {
       communication: "Communication",
       guestRating: "Airbnb guest rating",
       responseTime: "Response time",
+      greatResponseTime: "Great response time",
       guestFavorite: "Guest Favorite",
       superhost: "Superhost",
     },
@@ -155,6 +156,7 @@ export const translations = {
       flexibleCheckInDesc: "Early or late check-in available on request",
       luggageStorage: "Luggage storage",
       luggageStorageDesc: "Store your bags before check-in or after check-out",
+      luggageStorageDescAvailability: "Store your bags before check-in or after check-out (based on availability)",
     },
     // Guest Guide
     guestGuide: {
@@ -228,6 +230,7 @@ export const translations = {
       reviews: "Reviews",
       budapest: "Budapest, Hungary",
       budaRiverside: "Buda riverside, near Chain Bridge",
+      disclaimer: "This is an information page only. For exact features, availability, and booking conditions, please check Airbnb and Booking.com.",
     },
   },
   es: {
@@ -244,7 +247,7 @@ export const translations = {
     // Hero
     hero: {
       badge: "Favorito de los huéspedes · Superanfitrión",
-      headline: "Un apartamento boutique con vistas al Danubio junto al Puente de las Cadenas",
+      headline: "Un apartamento boutique con vistas al Danubio en el Puente de las Cadenas",
       subheadline: "Un elegante apartamento de 2 dormitorios en la ribera de Buda, con vistas panorámicas al Danubio, el Puente de las Cadenas, el Parlamento y la Basílica de San Esteban — diseñado para parejas, familias y pequeños grupos que desean experimentar Budapest desde una de sus ubicaciones más hermosas.",
       bookAirbnb: "Reservar en Airbnb",
       bookBooking: "Reservar en Booking.com",
@@ -261,6 +264,7 @@ export const translations = {
       communication: "Comunicación",
       guestRating: "Valoración huéspedes Airbnb",
       responseTime: "Tiempo de respuesta",
+      greatResponseTime: "Gran tiempo de respuesta",
       guestFavorite: "Favorito de huéspedes",
       superhost: "Superanfitrión",
     },
@@ -378,6 +382,7 @@ export const translations = {
       flexibleCheckInDesc: "Check-in temprano o tardío disponible bajo petición",
       luggageStorage: "Guardaequipajes",
       luggageStorageDesc: "Guarda tu equipaje antes del check-in o después del check-out",
+      luggageStorageDescAvailability: "Guarda tu equipaje antes del check-in o después del check-out (según disponibilidad)",
     },
     // Guest Guide
     guestGuide: {
@@ -451,6 +456,7 @@ export const translations = {
       reviews: "Reseñas",
       budapest: "Budapest, Hungría",
       budaRiverside: "Ribera de Buda, cerca del Puente de las Cadenas",
+      disclaimer: "Esta es solo una página informativa. Para características exactas, disponibilidad y condiciones de reserva, consulte Airbnb y Booking.com.",
     },
   },
   hu: {
@@ -484,6 +490,7 @@ export const translations = {
       communication: "Kommunikáció",
       guestRating: "Airbnb vendég értékelés",
       responseTime: "Válaszidő",
+      greatResponseTime: "Kiváló válaszidő",
       guestFavorite: "Vendégek kedvence",
       superhost: "Szuperházigazda",
     },
@@ -601,6 +608,7 @@ export const translations = {
       flexibleCheckInDesc: "Korai vagy késői bejelentkezés kérésre elérhető",
       luggageStorage: "Csomagmegőrzés",
       luggageStorageDesc: "Tárold a csomagjaidat bejelentkezés előtt vagy kijelentkezés után",
+      luggageStorageDescAvailability: "Tárold a csomagjaidat bejelentkezés előtt vagy kijelentkezés után (elérhetőség függvényében)",
     },
     // Guest Guide
     guestGuide: {
@@ -674,6 +682,7 @@ export const translations = {
       reviews: "Vélemények",
       budapest: "Budapest, Magyarország",
       budaRiverside: "Budai rakpart, a Lánchíd közelében",
+      disclaimer: "Ez csak egy tájékoztató oldal. A pontos jellemzőkért, elérhetőségért és foglalási feltételekért kérjük, ellenőrizze az Airbnb-t és a Booking.com-ot.",
     },
   },
 }

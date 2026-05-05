@@ -30,9 +30,9 @@ export function TrustRatings() {
     },
     {
       platform: t.trust.communication,
-      rating: "5.0 / 5",
+      rating: "5 / 5",
       subtitle: t.trust.guestRating,
-      badge: t.trust.responseTime,
+      badge: t.trust.greatResponseTime,
       icon: MessageCircle,
     },
   ]
